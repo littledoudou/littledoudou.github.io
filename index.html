@@ -1,247 +1,178 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  
-  
-  <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta name="keywords" content="hexo, autumn" />
+    <title>
+        豆豆的小助手
+    </title>
+    <!-- favicon -->
     
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
-
-  
-  
+    <link rel="icon" href="https://cdn.jsdelivr.net/gh/frontendsophie/hexo-theme-autumn@1.0.0/source/img/favicon.ico" />
+     
 <link rel="stylesheet" href="/css/style.css">
 
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
 
-  
+    <!-- highlight -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/github-gist.min.css" />
+    <script src="//cdn.bootcss.com/highlight.js/9.2.0/highlight.min.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad()
+    </script>
+    <script src="https://cdn.jsdelivr.net/gh/frontendsophie/hexo-infinite-scroll@2.0.0/dist/main.js"></script>
+
+    <script>
+        infiniteScroll()
+
+        window.addEventListener('DOMContentLoaded', function () {
+            const [
+                mainTitle,
+                mobileMenu,
+                mobileMainTitle,
+                mobileMenuBtn,
+                ipadMenuBtn,
+                aside,
+                closeBtn,
+            ] = getEle(
+                '#main-title',
+                '.mobile-menu',
+                '.mobile-menu h3',
+                '.mobile-menu button',
+                '.ipad-menu',
+                'aside',
+                'aside .close',
+            )
+            const io = new IntersectionObserver(entries => {
+                if (entries[0].intersectionRatio <= 0) {
+                    mobileMainTitle.classList.remove('invisibile')
+                } else {
+                    mobileMainTitle.classList.add('invisibile')
+                }
+            })
+            io.observe(mainTitle)
+
+            clickToggleAside(mobileMenuBtn)
+            clickToggleAside(ipadMenuBtn)
+            clickToggleAside(closeBtn, false)
+
+            const isMenuVisible = window.getComputedStyle(mobileMenu).display !== 'none'
+            if (isMenuVisible) document.body.style.background = 'none'
+
+            function getEle(...args) {
+                return args.map(arg => document.querySelector(arg))
+            }
+
+            function clickToggleAside(btn, show = true) {
+                btn.addEventListener('click', function () {
+                    if (show) {
+                        aside.style.display = 'block'
+                    } else {
+                        aside.style.display = 'none'
+                    }
+                })
+            }
+        })
+    </script>
 <meta name="generator" content="Hexo 5.4.0"></head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
+<body style="background: url(https://cdn.jsdelivr.net/gh/frontendsophie/hexo-theme-autumn@1.0.0/source/img/button-bg.png) #f3f3f3">
+    <div class="container">
+        <header class="header">
+    <nav class="mobile-menu" style="background: url(https://cdn.jsdelivr.net/gh/frontendsophie/hexo-theme-autumn@1.0.0/source/img/button-bg.png) #f3f3f3">
+        <h3 class="invisibile">
+            <a href="/" class="logo">
+                豆豆的小助手
+            </a>
+        </h3>
+        <button class="menu">menu</button>
+    </nav>
 
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-Outsider" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/reading/Outsider/" class="article-date">
-  <time class="dt-published" datetime="2021-08-06T22:38:59.000Z" itemprop="datePublished">2021-08-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/reading/Outsider/">L&#39;Étranger</a>
+    <button class="ipad-menu menu">menu</button>
+
+    <h1 class="title" id="main-title">
+        <a href="/" class="logo">
+            豆豆的小助手
+        </a>
     </h1>
-  
+    <h2 class="desc">
+        Happy island by doudou
+    </h2>
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="上班摸鱼杂七杂八"><a href="#上班摸鱼杂七杂八" class="headerlink" title="上班摸鱼杂七杂八"></a>上班摸鱼杂七杂八</h1><h2 id="加班必须摸鱼"><a href="#加班必须摸鱼" class="headerlink" title="加班必须摸鱼"></a>加班必须摸鱼</h2><h3 id="读《局外人》导致做梦有感"><a href="#读《局外人》导致做梦有感" class="headerlink" title="读《局外人》导致做梦有感"></a><strong>读《局外人》导致做梦有感</strong></h3><font color="grey">  
-&emsp;&emsp;疫情爆发后，《鼠疫》实在太有名了，有名到使诺贝尔文学奖得主加缪的文学光辉不得不照耀到本文化盐碱地处的程度。《局外人》作为一本ios系统微信阅读APP下篇幅200页的小小中篇，非常适合作为加入加缪群聊的谈资。 况且此书还有点有趣，读完确实感到没有吃亏没有上当—-可见在各个方面上，盲目跟风都确有其道理。  
-
-<p>&emsp;&emsp;《局外人》主角名曰默尔索，其人有一固定女友玛丽以及数位表面朋友：艾玛尼埃尔（同事，不知道为什么就是会下班混在一起玩）、塞莱斯特（社区酒馆老板，用于合理白嫖）、雷蒙（本故事线索人物，女性爱好者，肠胃不太好先锋代表），邻居沙拉玛诺老头和他的狗（默尔索的生活背景音提供者）。故事开始于默尔索母亲的葬礼，结束于他本人将被执行死刑，可以被简要如下概括：  </p>
-<pre><code>* 默尔索的妈妈在养老院去世。
-* 默尔索在他妈妈的葬礼上喝了咖啡牛奶、抽了烟、没有哭并拒绝了下葬前再看一眼母亲遗体的提议。葬礼次日，默尔索照常没有耽误和玛丽谈恋爱。
-* 雷蒙的同居对象似乎出轨了，无能狂怒后他家暴了同居对象。警察找上门之际，雷蒙请求默尔索帮忙作证同居对象的不忠。默尔索表示可以。雷蒙由此认定默尔索为自己的好兄弟。
-* 雷蒙感激默尔索，邀请他去度假。同居对象的哥哥集结一帮阿拉伯人跟上报仇，街头打斗戏开始。
-* 阿拉伯人在肉搏战中违规使用冷兵器。同时默尔索得到装备：一把枪。
-* 阿拉伯人继续使用冷兵器威逼默尔索，默尔索感到一丝心理压力，选择开枪，并且补刀了4枪。
-* 阿拉伯人卒，警察到场。默尔索被捕，被提讯，同时被安排了一名律师。
-* 预审法官官继续使出杀招--银色十字架，并自信默尔索必回对此痛哭流涕，大为忏悔。默尔索不为所动。
-* 审判ing。母亲葬礼出席者、女友和表面朋友们前来提供证词，然而生活细节中表露出的正常人性（是一位正直的情人、讲义气的哥们儿、不说废话的赊账常客等）无法抵消对母亲死亡的冷漠（喝了咖啡牛奶、抽了烟、没有哭并拒绝了下葬前再看一眼母亲遗体的提议）和对着尸体的4枪补刀。
-* 审判官合理推断默尔索这样冷漠的人必然是毫无感情的蓄意杀人犯，而不是还有抢救余地的冲动杀人犯。
-* 默尔索被判死刑。
-* 等待行刑期间，官方派出神甫教导默尔索信仰上帝，默尔索表示他真的不信。神甫不愿放弃，默尔索不胜其烦甚至差点胖揍神甫一顿，神甫遂终于放弃。
-* 默尔索将被执行死刑。  
-</code></pre>
-<p>&emsp;&emsp; 整个故事简单明了，围绕着审判默尔索杀人案一事，起因发展高潮结果非常平缓地讲下来，不太有多余的铺垫。邻居沙拉玛诺老头的狗走丢事件算得上书中唯一对审判过程没有起作用的冗余事件，但这一事件倒也解释了默尔索把母亲送去养老院的动机（既想缓解母亲无人陪伴的痛苦，同时确实没有在家赡养母亲的经济实力，那么最可行的方法就是送去养老院），证实了默尔索完完全全的实用主义而非丧失人性。全书人物关系的简单和主角看上去就懒于维护人际关系的性格特点倒也是一脉相承。情节之外，本书用大量的篇幅展现默尔索对周围世界的观察和思考。其中很多观点使文化盐碱地我本人啧啧称奇。<br></font>  </p>
-<ul>
-<li><p><em><strong>二值判断式的简明人生指南</strong></em>  </p>
- <font color="grey">  
-  &emsp;&emsp;默尔索对待任何选择题，即使是人生中某些重要时刻的选择题，都保持着一种及其平稳的心态。决策流程基本等同于做一道简单的二值判断题，不需要任何思前想后就能快速论断。  
-
-<p>   &emsp;&emsp;“我想这可以免得自己回家做饭，于是就接受了邀请。”  </p>
-<p>   &emsp;&emsp;“接着，他又要去逛妓院。我说不，因为我不喜欢。”</p>
-<p>   &emsp;&emsp;“晚上，玛丽来找我，问我是否愿意跟她结婚。我说结不结婚都行，如果她要，我们就结。”</p>
-<p>   &emsp;&emsp;同时他面对任何的疑问句，都会给出最客观的答案，甚至不会使用“有选择地说出部分真相”（本人在人生的某一阶段突然习得，并深感其对缓解心理压力同时平衡人际关系的有效）这一常用技巧。</p>
-<p>   &emsp;&emsp;“他就问我愿不愿意做他的朋友，我说做不做都可以。”</p>
-<p>   &emsp;&emsp;“过了一会儿，她问我爱不爱她。我对她说，这种话毫无意义，但我觉得似乎并不爱。”</p>
-<p>   &emsp;&emsp;“他问题是不是心理害怕。我回答说不。我甚至说，在某种意义上，我倒挺有兴趣见识见识如何打官司呢。”</p>
-<p>  &emsp;&emsp;默尔索从不花精力掩饰关于自己的真相，同时也从不羞于满足自我的需求。他做事的目标与方式全部出自自然的欲念，不需要获得某种道德上的许可，也不指望得到任何道德上的赞誉。自我即是名正言顺（听上去甚至有些中二）的人生状态，满足来自于内心而不是外界。很酷，很朋克（从某些角度上，这种处世方式的简明高效，不得不从内心深处感到一丝契合）。而这样的态度实际上很不社会化，不便于被社会管理，甚至颇有刺头的嫌疑，可能也构成了默尔索是一名社会局外人的部分原因。</p>
-  </font> </li>
-<li><p><em><strong>严肃概念的消解与个人的消极对抗</strong></em></p>
-  <font color="grey">  
-  &emsp;&emsp;在我看来，整本书最有戏剧张力的有三个时刻：  
-
-<p>  &emsp;&emsp;一是预审法官单独讯问默尔索时，面对默尔索的沉寂，试图用银十字架的力量得到默尔索真诚的忏悔。而对此。默尔索的反应只有“真的难以跟上，因为我感到很热，房子里有几只大苍蝇正落在我脸上”以及关于是否信仰上帝这一问题的“不”。</p>
-<p>  &emsp;&emsp;二是是法庭上检察官演讲式地痛批默尔索没有灵魂和道德和默尔索律师的精彩辩护。–“他说我实际上没有灵魂，没有丝毫人性，没有任何一条在人类灵魂中占神圣地位的道德原则。”“特别是在今天，我们在此人身上所看到的如此大的灵魂黑洞，正在变成整个社会有可能陷进去的深渊”。–“我本人，我也研究过被告的灵魂”“他说，他看到我是一个正经人，一个循规蹈矩的职员……一个模范儿子……”。正常辩论以嫌疑犯的灵魂本质为辩题，以道德、正义为武器，在法庭之上热火朝天地进行。而默尔索的注意力最后落在“卖冰的小贩吹响了喇叭”。</p>
-<p>  &emsp;&emsp;三是最后一幕神甫要求默尔索从牢房的石头中看出一张神圣的脸（上帝的脸），表露出他所期待的罪犯在神圣道德面前的忏悔、痛苦和被感召。而默尔索只能从这石头中看出一张女人的脸（玛丽），甚至因厌烦神甫用上帝浪费他最后的时间而胖揍神甫一顿。<br>  &emsp;&emsp;随着案件的推进，读者会越来越清晰地了解到，法庭对默尔索的审判建立在“默尔索是否具有与正常人无疑的灵魂，和是否拥有普遍的社会信仰”。默尔索需要承认“对母亲的爱”，需要承认“信仰上帝”，需要忏悔和痛哭流涕。这些给予了审判者们人生意义和行为合理性的东西不可以被轻易地挑战和冒犯。与集体意志相比，事实才是可以被随意解读和修饰的东西。默尔索的生机不在于“确实不是蓄意谋杀”，而在于“被高尚的道德感召并流下真挚的泪水”，毕竟一个相信上帝的人能有多少坏心思呢。<br>  &emsp;&emsp;默尔索的危险在于他法庭上的坚持说“不”，聚焦自己肉体的感受，忠诚献给了自我而不是上帝。法庭上的公开否认完全可以被视作对道德规训的消解，一种试图撬动秩序的狂妄举动。</p>
-  </font> </li>
-<li><p><em><strong>对外的冷感与自由的野心</strong></em></p>
-<font color="grey">  
-  &emsp;&emsp;（写到此处需要摸鱼）  
-  &emsp;&emsp; 看完整本小说，比较深的一点感触是：默尔索对外界的冷感并不能代表他对生活的消极。相反，他对周围世界的一切事物（声音、气味、场景……）都观察入微，并有着相当强烈而真实的欲望。默尔索对外界的冷感或许源于他内在的强烈：试图对自己的人生达到完全的掌控，因而尽可能避开一切外在干扰———即使接受死刑，也不能放弃对自己精神世界的主宰地位。这种强烈的自由的野心在传统意义上有其不道德的地方（至少称得上自私），但在浪漫主义的语境下，又确实有着难以抗拒的吸引力（危险又迷人）。
-</font> </li>
-<li><p><em><strong>附版本信息</strong></em></p>
-<ul>
-<li>上海译文出版社 2013-08</li>
-<li>译者：柳鸣九</li>
-</ul>
-</li>
-</ul>
-
-      
+    <div class="links">
+        <ul>
+            
+            <li>
+                <a target="_blank" rel="noopener" href="https://github.com/FrontendSophie">
+                    Github
+                </a>
+            </li>
+            
+            <li>
+                <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/frontendsophie/">
+                    LinkedIn
+                </a>
+            </li>
+            
+        </ul>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/reading/Outsider/" data-id="cks1dufc70000a5nidithd58l" data-title="L&#39;Étranger" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
+</header>
+        <main class="main">
+            
+<section class="posts">
+    
+        <article class="post">
+            
+                    <h1 class="post-title">
+                        <a href="/reading/Outsider/">
+                            L&#39;Étranger
+                        </a>
+                    </h1>
 
-
-
-  
-
-
+                    <ul class="post-date">
+                        <li>
+                            August 6, 2021
+                        </li>
+                        <li>
+                            littledoudou
+                        </li>
+                    </ul>
+                    
+                    <div class="post-content ">
+                        
+                            <a href="/reading/Outsider/" class="more-link">Continue reading</a>
+                    </div>
+        </article>
+        
 </section>
-        
-          <aside id="sidebar">
-  
+
+        </main>
+        <aside class="aside">
+            <div class="close"></div>
+            <section class="aside-section">
+                
+    <h1>Categories</h1>
+
     
 
-  
+            </section>
+            <section class="aside-section">
+                
+    <h1>Archives</h1>
+
+    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a></li></ul>
+
+
+            </section>
+            <section class="aside-section tag">
+                
+    <h1>Tags</h1>
+
     
 
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">August 2021</a></li></ul>
+            </section>
+        </aside>
     </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/reading/Outsider/">L&#39;Étranger</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2021 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-
-<script src="/js/jquery-3.4.1.min.js"></script>
-
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-
-  </div>
 </body>
+
 </html>
