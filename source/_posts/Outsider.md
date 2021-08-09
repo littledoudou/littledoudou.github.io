@@ -1,7 +1,13 @@
 ---
 title: L'Étranger
 date: 2021-08-06 22:38:59
-permalink: reading/Outsider/
+permalink: reading/Outsider/ 
+categories: 
+- Book review  
+tags:
+- L'Étranger
+- literature
+- review
 ---
 
 # 摸鱼杂七杂八  
